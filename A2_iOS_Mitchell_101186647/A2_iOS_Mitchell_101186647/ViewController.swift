@@ -69,6 +69,56 @@ class ViewController: UIViewController {
         providerLabel.text = "Provider: \(product.productProvider ?? "")"
     }
 
+    @IBAction func previousTapped(_ sender: UIButton) {
+        guard !products.isEmpty else { return }
+        currentIndex = (currentIndex - 1 + products.count) % products.count
+        displayCurrentProduct()
+    }
+
+    @IBAction func nextTapped(_ sender: UIButton) {
+        guard !products.isEmpty else { return }
+        currentIndex = (currentIndex + 1) % products.count
+        displayCurrentProduct()
+    }
+
+    @IBAction func searchTapped(_ sender: UIButton) {
+        let text = searchTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+
+        if text.isEmpty {
+            fetchProducts()
+            currentIndex = 0
+            displayCurrentProduct()
+            return
+        }
+
+        let request: NSFetchRequest<Product> = Product.fetchRequest()
+        request.predicate = NSPredicate(
+            format: "productName CONTAINS[cd] %@ OR productDescription CONTAINS[cd] %@",
+            text, text
+        )
+        request.sortDescriptors = [NSSortDescriptor(key: "productID", ascending: true)]
+
+        do {
+            let results = try context.fetch(request)
+
+            if results.isEmpty {
+                let alert = UIAlertController(
+                    title: "Not Found",
+                    message: "No matching products found.",
+                    preferredStyle: .alert
+                )
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                present(alert, animated: true)
+            } else {
+                products = results
+                currentIndex = 0
+                displayCurrentProduct()
+            }
+        } catch {
+            print("Search error: \(error)")
+        }
+    }
+
     
 }
 
