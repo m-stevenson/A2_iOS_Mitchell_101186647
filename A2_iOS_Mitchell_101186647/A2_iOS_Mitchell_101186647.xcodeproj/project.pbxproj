@@ -17,6 +17,7 @@
 		AA8C1F732F88557F000CE99E /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C1F712F88557F000CE99E /* Product+CoreDataClass.swift */; };
 		AA8C1F742F88557F000CE99E /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C1F722F88557F000CE99E /* Product+CoreDataProperties.swift */; };
 		AA8C1F762F88613B000CE99E /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C1F752F88613B000CE99E /* AddProductViewController.swift */; };
+		AA8C1F782F886325000CE99E /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C1F772F886325000CE99E /* ProductListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AA8C1F712F88557F000CE99E /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AA8C1F722F88557F000CE99E /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AA8C1F752F88613B000CE99E /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		AA8C1F772F886325000CE99E /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				AA8C1F6B2F885230000CE99E /* Info.plist */,
 				AA8C1F632F885216000CE99E /* A2_iOS_Mitchell_101186647.xcdatamodeld */,
 				AA8C1F752F88613B000CE99E /* AddProductViewController.swift */,
+				AA8C1F772F886325000CE99E /* ProductListViewController.swift */,
 			);
 			path = A2_iOS_Mitchell_101186647;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				AA8C1F742F88557F000CE99E /* Product+CoreDataProperties.swift in Sources */,
 				AA8C1F5B2F885216000CE99E /* AppDelegate.swift in Sources */,
 				AA8C1F732F88557F000CE99E /* Product+CoreDataClass.swift in Sources */,
+				AA8C1F782F886325000CE99E /* ProductListViewController.swift in Sources */,
 				AA8C1F5D2F885216000CE99E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
