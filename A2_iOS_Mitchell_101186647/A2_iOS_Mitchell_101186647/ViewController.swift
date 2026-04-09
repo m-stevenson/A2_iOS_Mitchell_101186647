@@ -120,11 +120,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAllTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "showAllProductsSegue", sender: nil)
     }
 
     @IBAction func addProductTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "showAddProductSegue", sender: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
