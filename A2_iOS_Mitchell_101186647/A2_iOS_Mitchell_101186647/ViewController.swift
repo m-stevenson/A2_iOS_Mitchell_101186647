@@ -6,14 +6,35 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var providerLabel: UILabel!
+    @IBOutlet weak var searchTextField: UITextField!
+
+    var products: [Product] = []
+    var currentIndex: Int = 0
+
+    var context: NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchProducts()
+        displayCurrentProduct()
+    }
 
-}
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchProducts()
+        displayCurrentProduct()
+    }
 
+    

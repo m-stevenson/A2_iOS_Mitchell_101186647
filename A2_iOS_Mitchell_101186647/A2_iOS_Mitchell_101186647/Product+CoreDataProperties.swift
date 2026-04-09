@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension Product {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Product> {
@@ -21,9 +20,8 @@ extension Product {
     @NSManaged public var productDescription: String?
     @NSManaged public var productPrice: Double
     @NSManaged public var productProvider: String?
-
 }
 
-extension Product : Identifiable {
+extension Product: Identifiable {
 
 }
