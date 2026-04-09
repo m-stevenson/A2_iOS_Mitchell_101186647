@@ -51,6 +51,24 @@ class ViewController: UIViewController {
         }
     }
 
+    func displayCurrentProduct() {
+        guard !products.isEmpty else {
+            idLabel.text = "ID: -"
+            nameLabel.text = "Name: No Products"
+            descLabel.text = "Description: -"
+            priceLabel.text = "Price: -"
+            providerLabel.text = "Provider: -"
+            return
+        }
+
+        let product = products[currentIndex]
+        idLabel.text = "Product ID: \(product.productID)"
+        nameLabel.text = "Product Name: \(product.productName ?? "")"
+        descLabel.text = "Description: \(product.productDescription ?? "")"
+        priceLabel.text = String(format: "Price: $%.2f", product.productPrice)
+        providerLabel.text = "Provider: \(product.productProvider ?? "")"
+    }
+
     
 }
 
