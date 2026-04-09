@@ -82,8 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func seedProducts(){
-        let context = persistent.viewContext
-        let request: NSFetch<Product> = Product.fetchRequest()
+        let context = persistentContainer.viewContext
+        let request: NSFetchRequest<Product> = Product.fetchRequest()
         
         do {
             let count = try context.count(for: request)
@@ -103,7 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 for item in sampleProducts{
                     let product = Product(context: context)
-                    produt.productID = item.0
+                    product.productID = item.0
                     product.productName = item.1
                     product.productDescription = item.2
                     product.productPrice = item.3
