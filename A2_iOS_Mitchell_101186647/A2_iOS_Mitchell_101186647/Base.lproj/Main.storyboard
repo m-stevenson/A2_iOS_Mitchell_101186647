@@ -39,6 +39,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Add a Product"/>
                                 <connections>
                                     <action selector="addProductTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j5e-cw-tv6"/>
+                                    <segue destination="5SF-Bi-imi" kind="show" identifier="showAddProductSegue" id="YrS-KX-w3u"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhX-SK-FF7">
@@ -98,6 +99,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="View All"/>
                                 <connections>
                                     <action selector="showAllTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JIu-gZ-dB0"/>
+                                    <segue destination="ch1-ix-ZHQ" kind="show" identifier="showAllProductsSegue" id="pQb-s7-ZlI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -116,6 +118,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="42" y="-2"/>
+        </scene>
+        <!--Add Product View Controller-->
+        <scene sceneID="4Xg-Oq-QJM">
+            <objects>
+                <viewController id="5SF-Bi-imi" customClass="AddProductViewController" customModule="A2_iOS_Mitchell_101186647" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c4l-x6-91a">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="kGp-PB-3xw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hc8-M8-BlO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Edb-Er-yIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-331" y="-679"/>
+        </scene>
+        <!--Product List View Controller-->
+        <scene sceneID="JnB-YR-Vke">
+            <objects>
+                <viewController id="ch1-ix-ZHQ" customClass="ProductListViewController" customModule="A2_iOS_Mitchell_101186647" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JOo-aO-0Ir">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="a1h-qv-dVs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wAI-S4-rJF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0TT-po-lod" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="338" y="-679"/>
         </scene>
     </scenes>
     <resources>
