@@ -40,5 +40,22 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
 
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return products.count
+    }
+
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
+        let product = products[indexPath.row]
+
+        var content = cell.defaultContentConfiguration()
+        content.text = product.productName ?? "No Name"
+        content.secondaryText = "ID: \(product.productID) | $\(String(format: "%.2f", product.productPrice)) | \(product.productProvider ?? "")"
+        cell.contentConfiguration = content
+
+        return cell
+    }
 }
