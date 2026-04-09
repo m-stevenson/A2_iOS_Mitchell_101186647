@@ -119,6 +119,22 @@ class ViewController: UIViewController {
         }
     }
 
-    
+    @IBAction func showAllTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "showAllProductsSegue", sender: nil)
+    }
+
+    @IBAction func addProductTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "showAddProductSegue", sender: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAllProductsSegue" {
+            let destination = segue.destination as! ProductListViewController
+            destination.context = context
+        } else if segue.identifier == "showAddProductSegue" {
+            let destination = segue.destination as! AddProductViewController
+            destination.context = context
+        }
+    }
 }
 
