@@ -37,4 +37,20 @@ class ViewController: UIViewController {
         displayCurrentProduct()
     }
 
+    func fetchProducts() {
+        let request: NSFetchRequest<Product> = Product.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "productID", ascending: true)]
+
+        do {
+            products = try context.fetch(request)
+            if currentIndex >= products.count {
+                currentIndex = 0
+            }
+        } catch {
+            print("Failed to fetch products: \(error)")
+        }
+    }
+
     
+}
+
