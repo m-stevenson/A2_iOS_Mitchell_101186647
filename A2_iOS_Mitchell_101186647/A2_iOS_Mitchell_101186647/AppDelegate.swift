@@ -100,7 +100,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     (9, "Headphones", "Balanced sound for great audio", 499.99, "Bose"),
                     (10, "Socks", "Comfort socks, 12 pack", 39.99, "Adidas"),
                 ]
+                
+                for item in sampleProducts{
+                    let product = Product(context: context)
+                    produt.productID = item.0
+                    product.productName = item.1
+                    product.productDescription = item.2
+                    product.productPrice = item.3
+                    product.productProvider = item.4
+                }
+                
+                try context.save()
             }
+        } catch {
+            print("Error adding sample products: \(error)")
         }
     }
 }
